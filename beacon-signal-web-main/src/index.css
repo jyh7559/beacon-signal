@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Intellizence Design System - Premium Dark-first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    /* Intellizence Brand Colors - HSL Format */
+    /* Logo Blue: #2D8CFF → Softened for eye comfort */
+    /* Logo Orange: #FF6B35 → Warmed for better UX */
+    --brand-blue: 210 75% 52%;
+    --brand-orange: 17 85% 55%;
+    --navy: 220 25% 15%;
+    --off-white: 220 20% 98%;
+    --gray: 220 12% 55%;
+    
+    /* Legacy color aliases */
+    --teal: 210 65% 48%;
+    --lime: 145 50% 45%;
+    
+    /* Semantic tokens - Light mode (Readable, professional, accessible) */
+    --background: 220 15% 95%;
+    --foreground: 220 25% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+    --primary: 210 70% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 90%;
+    --secondary-foreground: 220 25% 15%;
+    --muted: 220 14% 88%;
+    --muted-foreground: 220 15% 35%;
+    --accent: 17 80% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 65% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 80%;
+    --input: 220 15% 82%;
+    --ring: 210 70% 45%;
+    --radius: 0.625rem;
+    
+    /* Category Colors - Light (higher contrast) */
+    --category-funding: 160 50% 32%;
+    --category-ma: 270 45% 45%;
+    --category-executive: 17 80% 45%;
+    --category-expansion: 210 70% 42%;
+    --category-hiring: 145 50% 35%;
+    --category-layoffs: 0 60% 45%;
+    --category-product: 280 50% 45%;
+    --category-partnership: 185 55% 38%;
+    
+    /* Sidebar - Light */
+    --sidebar-background: 220 15% 97%;
+    --sidebar-foreground: 220 25% 12%;
+    --sidebar-primary: 210 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 92%;
+    --sidebar-accent-foreground: 220 25% 15%;
+    --sidebar-border: 220 15% 85%;
+    --sidebar-ring: 210 70% 45%;
+  }
+
+  /* High Contrast Mode - For accessibility */
+  .high-contrast {
+    --background: 220 10% 98%;
+    --foreground: 220 30% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 5%;
+    --primary: 210 80% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 85%;
+    --secondary-foreground: 220 30% 10%;
+    --muted: 220 12% 82%;
+    --muted-foreground: 220 20% 25%;
+    --accent: 17 90% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 75% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 70%;
+    --input: 220 15% 72%;
+    --ring: 210 80% 40%;
+    
+    --category-funding: 160 60% 28%;
+    --category-ma: 270 55% 40%;
+    --category-executive: 17 90% 40%;
+    --category-expansion: 210 80% 38%;
+    --category-hiring: 145 60% 30%;
+    --category-layoffs: 0 70% 40%;
+    --category-product: 280 60% 40%;
+    --category-partnership: 185 65% 32%;
+    
+    --sidebar-background: 220 10% 98%;
+    --sidebar-foreground: 220 30% 8%;
+    --sidebar-primary: 210 80% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 88%;
+    --sidebar-accent-foreground: 220 30% 10%;
+    --sidebar-border: 220 15% 75%;
+    --sidebar-ring: 210 80% 40%;
+  }
+
+  .dark {
+    /* Dark mode - Softer, warmer, easier on eyes */
+    --teal: 210 75% 55%;
+    --lime: 145 50% 52%;
+    
+    --background: 220 22% 11%;
+    --foreground: 220 15% 90%;
+    --card: 220 20% 14%;
+    --card-foreground: 220 15% 92%;
+    --popover: 220 20% 14%;
+    --popover-foreground: 220 15% 92%;
+    --primary: 210 75% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 18% 18%;
+    --secondary-foreground: 220 15% 90%;
+    --muted: 220 18% 18%;
+    --muted-foreground: 220 12% 58%;
+    --accent: 17 85% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 60% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 18% 22%;
+    --input: 220 18% 22%;
+    --ring: 210 75% 55%;
+    
+    /* Category Colors - Dark (balanced) */
+    --category-funding: 160 50% 48%;
+    --category-ma: 270 45% 58%;
+    --category-executive: 17 80% 58%;
+    --category-expansion: 210 70% 58%;
+    --category-hiring: 145 48% 52%;
+    --category-layoffs: 0 58% 58%;
+    --category-product: 280 48% 58%;
+    --category-partnership: 185 55% 52%;
+    
+    /* Sidebar - Dark */
+    --sidebar-background: 220 25% 9%;
+    --sidebar-foreground: 220 15% 90%;
+    --sidebar-primary: 210 75% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 18% 16%;
+    --sidebar-accent-foreground: 220 15% 90%;
+    --sidebar-border: 220 18% 16%;
+    --sidebar-ring: 210 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold tracking-tight;
+  }
+
+  /* Focus styles */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer components {
+  /* Glass card effect - Enhanced */
+  .glass {
+    @apply bg-card/70 backdrop-blur-xl border border-border/40 shadow-sm;
+  }
+
+  .glass-strong {
+    @apply bg-card/85 backdrop-blur-2xl border border-border/50 shadow-md;
+  }
+
+  /* Gradient backgrounds - Brand aligned */
+  .gradient-hero {
+    background: linear-gradient(145deg, hsl(var(--navy)) 0%, hsl(215 40% 10%) 50%, hsl(var(--navy)) 100%);
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(210 100% 45%) 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(17 100% 50%) 100%);
+  }
+
+  /* Glow effects - Brand colors */
+  .glow-primary {
+    box-shadow: 0 0 30px -8px hsl(var(--primary) / 0.4);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 30px -8px hsl(var(--accent) / 0.4);
+  }
+
+  /* Text gradients - Brand colors */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-accent to-accent/60 bg-clip-text text-transparent;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5 hover:border-primary/30;
+  }
+
+  /* Skeleton loader */
+  .skeleton {
+    @apply animate-pulse bg-muted/60 rounded;
+  }
+
+  /* Active indicator bar */
+  .active-bar {
+    @apply relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-4 before:bg-primary before:rounded-full;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
