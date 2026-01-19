@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "source": "beacon-signal-web-main/dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "us-east1"
+    }
+  }
+}
