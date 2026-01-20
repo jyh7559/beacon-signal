@@ -19,5 +19,19 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split vendor chunks to reduce main bundle size
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-router': ['react-router-dom'],
+          'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-toast'],
+          'vendor-data': ['@tanstack/react-query', '@supabase/supabase-js'],
+          'vendor-animation': ['framer-motion'],
+          'vendor-utils': ['lucide-react', 'clsx', 'tailwind-merge'],
+        },
+      },
+    },
   },
 }));
